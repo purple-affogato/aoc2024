@@ -24,8 +24,8 @@ def part2(muls):
 
 with open(filename) as f:
     for line in f:
-        muls1 = re.findall(r'mul\((\d+),(\d+)\)', line) # part 1
+        # muls1 = re.findall(r'mul\((\d+),(\d+)\)', line) # part 1
         muls = re.findall(r'(mul\((\d+),(\d+)\))|(do\(\))|(don\'t\(\))', line) # part 2
-        print(len(muls), len(muls1))
+        # print(len(muls), len(muls1))
         ans += part2(muls)
 print(ans)
