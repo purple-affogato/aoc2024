@@ -1,4 +1,4 @@
-filename = 'day4_input.txt'
+filename = 'input/day4_input.txt'
 wordsearch = []
 xmas = "XMAS"
 cnt = 0

@@ -1,7 +1,7 @@
 import re
 
 enable = True
-filename = 'day3_input.txt'
+filename = 'input/day3_input.txt'
 ans = 0
 
 def part1(muls):

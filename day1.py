@@ -1,7 +1,7 @@
 l = []
 r = []
 freq = {}
-with open('day1_input.txt', 'r') as f:
+with open('input/day1_input.txt', 'r') as f:
     for line in f:
         a, b = map(int, line.split())
         freq[b] = freq.get(b, 0) + 1

@@ -20,7 +20,7 @@ def pd(a, idx:int) -> bool:
     return True
 
 cnt = 0
-with open('day2_input.txt', 'r') as f:
+with open('input/day2_input.txt', 'r') as f:
     for line in f:
         lvls = list(map(int, line.split()))
         inc = True
