@@ -73,11 +73,11 @@ def part2():
     ans = dis[end[0]][end[1]]
     cnt = 0
     print(ans)
-    debug = {}
+    # debug = {}
     for i in range(len(pts)):
         for j in range(i+1, len(pts)):
             x,y = pts[i], pts[j]
-            man_dist = abs((x[0]-y[0])) + abs(x[1]-y[1])
+            man_dist = abs(x[0]-y[0]) + abs(x[1]-y[1])
             if man_dist <= 20 and dis[y[0]][y[1]] - dis[x[0]][x[1]] > man_dist:
                 saved = dis[y[0]][y[1]] - dis[x[0]][x[1]] - man_dist
                 if saved >= 100:
