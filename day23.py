@@ -54,7 +54,8 @@ def part2():
         adj[e[1]].append(e[0])
     comps.sort()
     # print(comps)
-    find_lan_party(comps, adj, 0, [])
+    # find_lan_party(comps, adj, 0, [])
+    bron_kerbosch([], comps, [], adj)
     for a in ans2:
         print(a, end="," if a != ans2[-1] else "\n")
 
@@ -73,7 +74,23 @@ def find_lan_party(comps:list, adj:dict, idx:int, party:list):
         party.append(comps[i])
         find_lan_party(comps, adj, i+1, party)
         party.pop()
-    # find_lan_party(comps, adj, idx+1, party)
 
+def bron_kerbosch(party:list, comps:list, x:list, adj:dict)->list:
+    global ans2
+    if len(comps) == 0 and len(x) == 0 and len(ans2) < len(party):
+        ans2 = party.copy()
+    for c in comps:
+        party.append(c)
+        bron_kerbosch(party, intersection(comps, adj[c]), intersection(x, adj[c]), adj)
+        party.pop()
+        comps.remove(c)
+        x.append(c)
+
+def intersection(a:list, b:list)->list:
+    result = []
+    for i in a:
+        if i in b:
+            result.append(i)
+    return result
 
 part2()
